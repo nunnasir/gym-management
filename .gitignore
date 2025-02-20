@@ -398,3 +398,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/src/GymManagement.Api/GymManagement.db
+/src/GymManagement.Api/GymManagement.db-shm
+/src/GymManagement.Api/GymManagement.db-wal
