@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D40B30C3-3145-431D-9F1F-7C41ACC13EB9}"
 EndProject
@@ -14,6 +14,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymManagement.Domain", "src\GymManagement.Domain\GymManagement.Domain.csproj", "{77517A4E-4CA9-4737-85F1-5E7C0A8127A8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymManagement.Contracts", "src\GymManagement.Contracts\GymManagement.Contracts.csproj", "{72CA2146-676C-487C-8EB2-6484E267CF50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCommon", "tests\TestCommon\TestCommon.csproj", "{4A788D36-922A-4221-B7B5-A8F117089029}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymManagement.Domain.UnitTests", "tests\GymManagement.Domain.UnitTests\GymManagement.Domain.UnitTests.csproj", "{E7DB09A6-04F2-4F29-A35F-26F4E0FCA3CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +47,14 @@ Global
 		{72CA2146-676C-487C-8EB2-6484E267CF50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72CA2146-676C-487C-8EB2-6484E267CF50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72CA2146-676C-487C-8EB2-6484E267CF50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A788D36-922A-4221-B7B5-A8F117089029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A788D36-922A-4221-B7B5-A8F117089029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A788D36-922A-4221-B7B5-A8F117089029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A788D36-922A-4221-B7B5-A8F117089029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7DB09A6-04F2-4F29-A35F-26F4E0FCA3CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7DB09A6-04F2-4F29-A35F-26F4E0FCA3CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7DB09A6-04F2-4F29-A35F-26F4E0FCA3CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7DB09A6-04F2-4F29-A35F-26F4E0FCA3CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,5 +65,10 @@ Global
 		{4F96B3A8-6609-4892-AFF5-6AC779B2CECC} = {D40B30C3-3145-431D-9F1F-7C41ACC13EB9}
 		{77517A4E-4CA9-4737-85F1-5E7C0A8127A8} = {D40B30C3-3145-431D-9F1F-7C41ACC13EB9}
 		{72CA2146-676C-487C-8EB2-6484E267CF50} = {D40B30C3-3145-431D-9F1F-7C41ACC13EB9}
+		{4A788D36-922A-4221-B7B5-A8F117089029} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{E7DB09A6-04F2-4F29-A35F-26F4E0FCA3CB} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D8CEDB41-5375-4AD6-B52D-FC5DE9B9C1A3}
 	EndGlobalSection
 EndGlobal
