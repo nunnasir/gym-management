@@ -11,14 +11,9 @@ namespace GymManagement.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class SubscriptionController : ApiController
+public class SubscriptionController(ISender mediator) : ApiController
 {
-    private readonly ISender _mediatR;
-
-    public SubscriptionController(ISender mediator)
-    {
-        _mediatR = mediator;
-    }
+    private readonly ISender _mediatR = mediator;
 
     [HttpPost]
     public async Task<IActionResult> CreateSubscription(CreateSubscriptionRequest request)

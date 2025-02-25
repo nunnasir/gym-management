@@ -4,6 +4,6 @@ public static partial class Constant
 {
     public static class Admin
     {
-        public static readonly Guid Id = new("2150E333-8FDC-42A3-9474-1A3956D46DE8");
+        public static readonly Guid Id = new("2150e333-8fdc-42a3-9474-1a3956d46de8");
     }
 }

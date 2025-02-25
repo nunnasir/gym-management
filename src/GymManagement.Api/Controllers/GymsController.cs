@@ -10,14 +10,9 @@ using Microsoft.AspNetCore.Mvc;
 namespace GymManagement.Api.Controllers;
 
 [Route("subscriptions/{subscriptionId:guid}/gyms")]
-public class GymsController : ApiController
+public class GymsController(ISender mediator) : ApiController
 {
-    private readonly ISender _mediator;
-
-    public GymsController(ISender mediator)
-    {
-        _mediator = mediator;
-    }
+    private readonly ISender _mediator = mediator;
 
     [HttpPost]
     public async Task<IActionResult> CreateGym(
