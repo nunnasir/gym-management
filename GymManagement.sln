@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymManagement.Domain.UnitTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymManagement.Application.UnitTests", "tests\GymManagement.Application.UnitTests\GymManagement.Application.UnitTests.csproj", "{5ACEA22F-6B5D-42DD-81DA-C0C5F8713F66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymManagement.Application.SubcutaneousTests", "tests\GymManagement.Application.SubcutaneousTests\GymManagement.Application.SubcutaneousTests.csproj", "{677B1149-2F43-48C9-A97D-DBA4A361DEF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{5ACEA22F-6B5D-42DD-81DA-C0C5F8713F66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ACEA22F-6B5D-42DD-81DA-C0C5F8713F66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ACEA22F-6B5D-42DD-81DA-C0C5F8713F66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{677B1149-2F43-48C9-A97D-DBA4A361DEF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{677B1149-2F43-48C9-A97D-DBA4A361DEF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{677B1149-2F43-48C9-A97D-DBA4A361DEF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{677B1149-2F43-48C9-A97D-DBA4A361DEF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{4A788D36-922A-4221-B7B5-A8F117089029} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{E7DB09A6-04F2-4F29-A35F-26F4E0FCA3CB} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{5ACEA22F-6B5D-42DD-81DA-C0C5F8713F66} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{677B1149-2F43-48C9-A97D-DBA4A361DEF1} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D8CEDB41-5375-4AD6-B52D-FC5DE9B9C1A3}

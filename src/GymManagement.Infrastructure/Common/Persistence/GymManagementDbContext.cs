@@ -3,6 +3,7 @@ using GymManagement.Domain.Admins;
 using GymManagement.Domain.Common;
 using GymManagement.Domain.Gyms;
 using GymManagement.Domain.Subscriptions;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -11,7 +12,8 @@ namespace GymManagement.Infrastructure.Common.Persistence;
 
 public class GymManagementDbContext(
     DbContextOptions options,
-    IHttpContextAccessor httpContextAccessor)
+    IHttpContextAccessor httpContextAccessor,
+    IPublisher _publisher)
     : DbContext(options), IUnitOfWork
 {
     private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
@@ -28,18 +30,35 @@ public class GymManagementDbContext(
             .SelectMany(x => x)
             .ToList();
 
-        // store them in the http context for later
-        AddDomainEventsToOfflineProcessingQueue(domainEvents);
+        // store them in the http context for later if user is waiting online
+        if (IsUserWaitingOnline())
+        {
+            AddDomainEventsToOfflineProcessingQueue(domainEvents);
+        }
+        else
+        {
+            await PublishDomainEvents(_publisher, domainEvents);
+        }
 
         await base.SaveChangesAsync();
     }
+
+    private static async Task PublishDomainEvents(IPublisher _publisher, List<IDomainEvent> domainEvents)
+    {
+        foreach (var domainEvent in domainEvents)
+        {
+            await _publisher.Publish(domainEvent);
+        }
+    }
+
+    private bool IsUserWaitingOnline() => _httpContextAccessor.HttpContext is not null;
 
     private void AddDomainEventsToOfflineProcessingQueue(List<IDomainEvent> domainEvents)
     {
         // fetch queue from http context or create a new quew if it doesn't exists
         var domainEventsQueue = _httpContextAccessor.HttpContext!.Items
-            .TryGetValue("DomainEventsQueue", out var value) && value is Queue<IDomainEvent> existingEvents 
-                ? existingEvents 
+            .TryGetValue("DomainEventsQueue", out var value) && value is Queue<IDomainEvent> existingEvents
+                ? existingEvents
                 : new Queue<IDomainEvent>();
 
         // add the domain events to the end of the queue
