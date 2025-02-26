@@ -1,10 +1,11 @@
-﻿using GymManagement.Domain.Users;
+﻿using GymManagement.Application.Common.Interfaces;
+using GymManagement.Domain.Users;
 using GymManagement.Infrastructure.Common.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 namespace GymManagement.Infrastructure.Users;
 
-public class UsersRepository(GymManagementDbContext _dbContext)
+public class UsersRepository(GymManagementDbContext _dbContext) : IUsersRepository
 {
     public async Task AddUserAsync(User user)
     {
