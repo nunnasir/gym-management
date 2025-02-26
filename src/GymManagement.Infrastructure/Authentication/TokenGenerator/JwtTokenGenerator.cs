@@ -44,7 +44,7 @@ public class JwtTokenGenerator : IJwtTokenGenerator
             signingCredentials: credentials
         );
 
-        return new JwtSecurityTokenHandler().WriteToken(token);
+        return new JwtSecurityTokenHandler().WriteToken(token);        
     }
 
     private static void AddIds(User user, List<Claim> claims)
