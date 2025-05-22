@@ -8,11 +8,19 @@ namespace GymManagement.Application.Profiles.Commands.CreateAdminProfile;
 public class CreateAdminProfileCommandHandler(
     IUsersRepository _usersRepository,
     IAdminsRepository _adminsRepository,
-    IUnitOfWork _unitOfWork)
+    IUnitOfWork _unitOfWork,
+    ICurrentUserProvider _currentUserProvider)
         : IRequestHandler<CreateAdminProfileCommand, ErrorOr<Guid>>
 {
     public async Task<ErrorOr<Guid>> Handle(CreateAdminProfileCommand command, CancellationToken cancellationToken)
     {
+        var currentuser = _currentUserProvider.GetCurrentUser();
+
+        if(currentuser.Id != command.UserId)
+        {
+            return Error.Unauthorized(description: "User is forbidden from taking this actions.");
+        }
+
         var user = await _usersRepository.GetByIdAsync(command.UserId);
 
         if (user is null)
